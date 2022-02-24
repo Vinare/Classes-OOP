@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "faculty": "IT",
+      "course": "4",
+      "name": "Екатерина",
+      "surname": "Винарская",
+      "birthday": "1990-02-02",
+      "phone": "7(916) 166-61-62",
+      "location": "Москва",
+      "id": 1
+    },
+    {
+      "faculty": "Faculty",
+      "course": "2",
+      "name": "Name",
+      "surname": "Surname",
+      "birthday": "1990-02-02",
+      "phone": "7(916) 166-61-62",
+      "location": "Moscow",
+      "id": 2
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
