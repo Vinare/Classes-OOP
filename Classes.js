@@ -80,16 +80,16 @@ class Student extends Human {
         return this._course;
     }
 
-    // jsonToObject(json) {
-    //     var obj = json;
-    //     this.name = obj["name"];
-    //     this.surname = obj["surname"];
-    //     this.birthday = obj["birthday"];
-    //     this.phone = obj["phone"];
-    //     this.location = obj["location"];
-    //     this.faculty = obj["faculty"];
-    //     this.course = obj["course"];
-    // }
+    jsonToObject(json) {
+        var obj = json;
+        this.name = obj["name"];
+        this.surname = obj["surname"];
+        this.birthday = obj["birthday"];
+        this.phone = obj["phone"];
+        this.location = obj["location"];
+        this.faculty = obj["faculty"];
+        this.course = obj["course"];
+    }
 
     set faculty(faculty) {
         this.faculty = faculty;
