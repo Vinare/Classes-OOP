@@ -7,6 +7,7 @@ var name_id = document.getElementById("name_id");
   var region_id = document.getElementById("region_id");
   var selectedTown = region_id.options[region_id.selectedIndex].textContent;
   var cathedra_id = document.getElementById("cathedra_id");
+  var cathedra_idValue = cathedra_id.value;
   var position_id = document.getElementById("position_id");
   var faculty_id = document.getElementById("faculty_id");
   var course_id = document.getElementById("course_id");
@@ -46,20 +47,20 @@ class Human {
         return this._humanId;
     }
 
-    set name(_name) {
-        this.name = this._name;
+    set name(name) {
+        this.name = name;
     }
-    set surname(_surname) {
-        this.surname = this._surname;
+    set surname(surname) {
+        this.surname = surname;
     }
-    set birthday(_birthday) {
-        this.birthday = this._birthday;
+    set birthday(birthday) {
+        this.birthday = birthday;
     }
-    set phone(_phone) {
-        this.phone = this._phone;
+    set phone(phone) {
+        this.phone = phone;
     }
-    set location(_location) {
-        this.location = this._location;
+    set location(location) {
+        this.location = location;
     }
 }   
 
@@ -79,15 +80,26 @@ class Student extends Human {
         return this._course;
     }
 
-    set faculty(_faculty) {
-        this.faculty = this._faculty;
+    // jsonToObject(json) {
+    //     var obj = json;
+    //     this.name = obj["name"];
+    //     this.surname = obj["surname"];
+    //     this.birthday = obj["birthday"];
+    //     this.phone = obj["phone"];
+    //     this.location = obj["location"];
+    //     this.faculty = obj["faculty"];
+    //     this.course = obj["course"];
+    // }
+
+    set faculty(faculty) {
+        this.faculty = faculty;
     }
-    set course(_course) {
-        this.course = this._course;
+    set course(course) {
+        this.course = course;
     }
 }
 
-const student1 = new Student(name_id.value, surname_id.value, birth_date_id.value, phone_id.value, selectedTown, faculty_id.value, course_id.value);
+var student1 = new Student(name_id.value, surname_id.value, birth_date_id.value, phone_id.value, selectedTown, faculty_id.value, course_id.value);
 
 console.log(student1);
 
@@ -106,6 +118,17 @@ class Teacher extends Human {
         return this._cathedra;
     }
 
+    jsonToObject(json) {
+        var obj = json;
+        this.name = obj["name"];
+        this.surname = obj["surname"];
+        this.birthday = obj["birthday"];
+        this.phone = obj["phone"];
+        this.location = obj["location"];
+        this.cathedra = obj["cathedra"];
+        this.position = obj["position"];
+    }
+
     set position(_position) {
         this.position = _position;
     }
@@ -120,5 +143,9 @@ const teacher1 = new Teacher();
 const btn = document.querySelector('.form-control.btn-primary');
 
 btn.addEventListener('click', () => {
-  localStorage.setItem('students', JSON.stringify(student1));
+  localStorage.setItem('student', JSON.stringify(student1));
+
+  var student1 = new Student(name_id.value, surname_id.value, birth_date_id.value, phone_id.value, selectedTown, faculty_id.value, course_id.value);
+
+  console.log(student1);
 });
