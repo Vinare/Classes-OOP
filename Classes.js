@@ -1,17 +1,18 @@
 "use strict";
 
-var nameValue = document.getElementById("name_id").value;
-  var surname_id = document.getElementById("surname_id").value;
-  var birth_date_id = document.getElementById("birth_date_id").value;
-  var phone_id = document.getElementById("phone_id").value;
+var name_id = document.getElementById("name_id");
+  var surname_id = document.getElementById("surname_id");
+  var birth_date_id = document.getElementById("birth_date_id");
+  var phone_id = document.getElementById("phone_id");
   var region_id = document.getElementById("region_id");
   var selectedTown = region_id.options[region_id.selectedIndex].textContent;
-  var cathedra_id = document.getElementById("cathedra_id").value;
-  var position_id = document.getElementById("position_id").value;
-  var faculty_id = document.getElementById("faculty_id").value;
-  var course_id = document.getElementById("course_id").value;
-  var id = getParam("id");
+  var cathedra_id = document.getElementById("cathedra_id");
+  var position_id = document.getElementById("position_id");
+  var faculty_id = document.getElementById("faculty_id");
+  var course_id = document.getElementById("course_id");
+//   var id = getParam("id");
 var selectedValue = document.getElementById("selectBox");
+
 
 class Human {
     constructor(name, surname, birthday, phone, location) {
@@ -46,19 +47,19 @@ class Human {
     }
 
     set name(_name) {
-        this.name = _name;
+        this.name = this._name;
     }
     set surname(_surname) {
-        this.surname = _surname;
+        this.surname = this._surname;
     }
     set birthday(_birthday) {
-        this.birthday = _birthday;
+        this.birthday = this._birthday;
     }
     set phone(_phone) {
-        this.phone = _phone;
+        this.phone = this._phone;
     }
     set location(_location) {
-        this.location = _location;
+        this.location = this._location;
     }
 }   
 
@@ -78,18 +79,17 @@ class Student extends Human {
         return this._course;
     }
 
-    set faculty(faculty) {
-        this.faculty.push(faculty);
+    set faculty(_faculty) {
+        this.faculty = this._faculty;
     }
-    set course(course) {
-
-        this.course.push(course);
+    set course(_course) {
+        this.course = this._course;
     }
 }
 
-const student = new Student(nameValue, surname_id, birth_date_id, phone_id, selectedTown, faculty_id, course_id);
+const student1 = new Student(name_id.value, surname_id.value, birth_date_id.value, phone_id.value, selectedTown, faculty_id.value, course_id.value);
 
-console.log(student);
+console.log(student1);
 
 class Teacher extends Human {
     constructor(name, surname, birthday, phone, location, cathedra, position) {
@@ -106,19 +106,19 @@ class Teacher extends Human {
         return this._cathedra;
     }
 
-    set position(position) {
-        this.position.push(position);
+    set position(_position) {
+        this.position = _position;
     }
 
-    set cathedra(cathedra) {
-        this.cathedra.push(cathedra);
+    set cathedra(_cathedra) {
+        this.cathedra = _cathedra;
     }
 }
 
-const teacher = new Teacher();
+const teacher1 = new Teacher();
 
 const btn = document.querySelector('.form-control.btn-primary');
 
 btn.addEventListener('click', () => {
-  localStorage.setItem('students', JSON.stringify(student));
+  localStorage.setItem('students', JSON.stringify(student1));
 });

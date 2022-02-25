@@ -1,14 +1,14 @@
 "use strict";
 
- var name_id = document.getElementById("name_id");
-  var surname_id = document.getElementById("surname_id");
-  var birth_date_id = document.getElementById("birth_date_id");
-  var phone_id = document.getElementById("phone_id");
-  var region_id = document.getElementById("region_id");
-  var cathedra_id = document.getElementById("cathedra_id");
-  var position_id = document.getElementById("position_id");
-  var faculty_id = document.getElementById("faculty_id");
-  var course_id = document.getElementById("course_id");
+//  var name_id = document.getElementById("name_id");
+//   var surname_id = document.getElementById("surname_id");
+//   var birth_date_id = document.getElementById("birth_date_id");
+//   var phone_id = document.getElementById("phone_id");
+//   var region_id = document.getElementById("region_id");
+//   var cathedra_id = document.getElementById("cathedra_id");
+//   var position_id = document.getElementById("position_id");
+//   var faculty_id = document.getElementById("faculty_id");
+//   var course_id = document.getElementById("course_id");
   var id = getParam("id");
 
 
