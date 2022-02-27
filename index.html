@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="Classes.js" defer></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <form name="human">
+    <div class="form-group; center-block" style="width:40%; margin-top: 4%">
+      Type:
+      <br />
+      <select class="form-control" id="selectBox" onchange="changeType();">
+        <option value="1">Student</option>
+        <option value="2">Teacher</option>
+      </select><br />
+      <div>Name: <input id="name_id" placeholder="Имя" class="form-control" type="text" pattern="[A-Za-zА-Яа-яЁё]{2,15}"
+          title="Поле должно содержать 2-15 букв" required=""><br /></div>
+      <div>Surname: <input id="surname_id" placeholder="Фамилия" class="form-control" type="text"
+          pattern="[A-Za-zА-Яа-яЁё]{2,25}" title="Поле должно содержать 2-25 букв" required=""><br />
+        <div>Birthday: <input id="birth_date_id" class="form-control" type="date" required="" title="Обязательное поле">
+          <br />
+          <div>Phone: <input id="phone_id" placeholder="+7 (916) 166-61-62" class="form-control" type="text"
+              pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
+              title="Укажите ваш номер"><br /></div>
+          <div>Region:</div>
+          <select class="form-control" id="region_id">
+            <option value="1">Москва</option>
+            <option value="2">Санкт-Петербург</option>
+            <option value="3">Уфа</option>
+            <option value="4">Краснодар</option>
+            <option value="5">Тула</option>
+            <option value="6">Севастополь</option>
+          </select><br />
+          <div id="cathedraContainer">Cathedra: <input id="cathedra_id" class="form-control" type="text"
+              pattern="[A-Za-zА-Яа-яЁё]{1,20}" title="Введите кафедру"></div>
+          <div id="positionContainer">Position: <input id="position_id" class="form-control" type="text"
+              pattern="[A-Za-zА-Яа-яЁё]{1,20}" title="Введите должность"></div>
+          <div id="facultyContainer">Faculty: <input id="faculty_id" class="form-control" type="text"
+              pattern="[A-Za-zА-Яа-яЁё]{1,20}" title="Введите факультет"></div>
+          <div id="courseContainer">Course: <input id="course_id" class="form-control" type="text" pattern="[0-5]{1}"
+              title="Введите курс"></div><br />
+          <input type="submit" value="Save" class="form-control btn-primary"><br />
+          <input type="button" value="Back" onClick="window.location='index_1.html'" class="form-control btn-primary">
+        </div>
+  </form>
+</body>
+
+</html>
